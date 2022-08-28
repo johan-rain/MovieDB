@@ -2,6 +2,12 @@ import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
+import CurrentFilms from './pages/CurrentFilms'
+import TopFilms from './pages/TopFilms'
+import PopularFilms from './pages/PopularFilms'
+import GenrePage from './pages/GenrePage'
+import GenresPage from './pages/GenresPage'
+import ActorsPage from './pages/ActorsPage'
 import './assets/scss/App.scss'
 
 function App() {
@@ -11,12 +17,12 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/current" element={<HomePage />} />
-				<Route path="/popular" element={<HomePage />} />
-				<Route path="/toplist" element={<HomePage />} />
-				<Route path="/actor/:id" element={<HomePage />} />
-				<Route path="/genres" element={<HomePage />} />
-				<Route path="/genres/:id" element={<HomePage />} />
+				<Route path="/current" element={<CurrentFilms />} />
+				<Route path="/popular" element={<PopularFilms />} />
+				<Route path="/toplist" element={<TopFilms />} />
+				<Route path="/actor/:id" element={<ActorsPage />} />
+				<Route path="/genres" element={<GenresPage />} />
+				<Route path="/genres/:id" element={<GenrePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
