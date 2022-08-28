@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ActorInfo() {
+function LoadingSpinner() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function ActorInfo() {
     )
 }
 
-export default ActorInfo
+export default LoadingSpinner

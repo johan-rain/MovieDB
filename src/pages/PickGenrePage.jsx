@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container'
 
-function TopFilms() {
+function GenresPage() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function TopFilms() {
     )
 }
 
-export default TopFilms
+export default GenresPage

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ActorInfo() {
+function Pagination() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function ActorInfo() {
     )
 }
 
-export default ActorInfo
+export default Pagination

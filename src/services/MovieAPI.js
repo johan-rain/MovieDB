@@ -1,51 +1,77 @@
-import axios from 'axios'
+import axios from "axios";
+ 
+const BASE_URL = "https://api.themoviedb.org/3";
+ 
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
+ 
+const FAKE_SLOW_API = false;
+const FAKE_SLOW_API_DELAY = 1500;
+ 
+const requestOptions = {
+    params: {
+        api_key: "cb7818f49d905d77dbc81f10a94752b9",
+        language: "en-US",
+        include_adult: false,
+    },
+};
+ 
+ const get = async (endpoint, options) => {
+     const res = await axios.get(endpoint, options);
+ 
+     console.log(endpoint, options);
+ 
+     FAKE_SLOW_API &&
+         (await new Promise((r) => setTimeout(r, FAKE_SLOW_API_DELAY)));
+ 
+     return res.data;
+ };
 
-const API_KEY = "?api_key=cb7818f49d905d77dbc81f10a94752b9&language=en-US"
-axios.defaults.baseURL = 'https://api.themoviedb.org/3/'
+const getMovie = (id) => {
+	return get(
+		`${BASE_URL}/movie/${id}?&append_to_response=credits`, requestOptions);
+};
 
-// Get trending movies
-const getCurrentMovies = async () => {
-	return await axios.get(`movie/now_playing?api_key=${API_KEY}`)
-}
+const getActor = (id) => {
+	return get(
+		`${BASE_URL}/person/${id}?append_to_response=movie_credits`, requestOptions);
+};
 
-// Get popular movies
-const getPopularMovies = async () => {
-	return await axios.get(`movie/popular?api_key=${API_KEY}`)
-}
+const getGenres = () => {
+	return get(`${BASE_URL}/genre/movie/list`, requestOptions);
+};
 
-// Get the highest rated movies
-const getTopRatedMovies = async () => {
-	return await axios.get(`movie/top_rated?api_key=${API_KEY}`)
-}
+const getMoviesByGenre = (id, page) => {
+	return get(
+		`${BASE_URL}/discover/movie?&with_genres=${id}&page=${page}`,
+		requestOptions
+	);
+};
 
-// Get a movie with info and actors
-const getMovie = async (id) => {
-	return await axios.get(`/movie/${id}?api_key=${API_KEY}&append_to_response=credits,similar`)
-}
+const getPopularMovies = () => {
+	return get(`${BASE_URL}/movie/popular`, requestOptions);
+};
 
-// Get an actor with an id
-const getActor = async (id) => {
-	return await axios.get(`/person/${id}?api_key=${API_KEY}&append_to_response=combined_credits`)
-}
+const getNowPlaying = () => {
+	return get(`${BASE_URL}/movie/now_playing`, requestOptions);
+};
 
-// Get all genres
-const getGenres = async () => {
-	return await axios.get(`/genre/movie/list?api_key=${API_KEY}`)
-}
+const getTopRated = () => {
+	return get(`${BASE_URL}/movie/top_rated`, requestOptions);
+};
 
-// Get only one genre
-const getGenre = async (genre) => {
-	return await axios.get(`/discover/movie?api_key=${API_KEY}&with_genres=${genre}`)
-}
+const getMoviePoster = (size, poster_path) => {
+	return get(`${IMAGE_BASE_URL}/${size}/${poster_path}`);
+};
 
 const exports = {
-	getCurrentMovies,
-	getPopularMovies,
-	getTopRatedMovies, 
 	getMovie,
 	getActor,
 	getGenres,
-	getGenre,
-}
+	getMoviesByGenre,
+	getPopularMovies,
+	getNowPlaying,
+	getTopRated,
+	getMoviePoster,
+};
 
-export default exports
+export default exports;
