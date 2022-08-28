@@ -11,6 +11,12 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
+				<Route path="/current" element={<HomePage />} />
+				<Route path="/popular" element={<HomePage />} />
+				<Route path="/toplist" element={<HomePage />} />
+				<Route path="/actor/:id" element={<HomePage />} />
+				<Route path="/genres" element={<HomePage />} />
+				<Route path="/genres/:id" element={<HomePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
