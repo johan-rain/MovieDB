@@ -1,5 +1,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import FilmCard from "./FilmCard"
 
 const ActorDetails = ({ actor }) => {
 
@@ -20,6 +23,20 @@ const ActorDetails = ({ actor }) => {
 					</img>
 
 					<p className="w-75 ms-5">{actor.biography}</p>
+
+				</div>
+
+				<div className="pt-5">
+
+					<h2>Starred in</h2>
+
+					<Row>
+						{actor.movie_credits.cast.map((movie, i) => (
+							<Col lg={2} md={4} sm={10} key={i} className="pb-2">
+								<FilmCard movie={movie} />
+							</Col>
+						))}
+					</Row>
 
 				</div>
 
