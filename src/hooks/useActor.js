@@ -1,11 +1,8 @@
+import { useQuery } from "react-query";
+import MovieAPI from "../services/MovieAPI"
 
+const useActor = (id) => {
+	return useQuery(["actor", id], () => MovieAPI.getActor(id));
+};
 
-function useActor() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default useActor
+export default useActor;

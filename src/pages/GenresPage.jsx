@@ -1,11 +1,11 @@
-import Container from 'react-bootstrap/Container'
+import React from 'react'
 
 function GenresPage() {
-    return (
-        <div>
-            
-        </div>
-    )
+	return (
+		<div>
+			
+		</div>
+	)
 }
 
 export default GenresPage

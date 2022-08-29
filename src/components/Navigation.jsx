@@ -17,9 +17,6 @@ const Navigation = () => {
 
 					<Nav activeKey="/">
 						<Nav.Item>
-							<Nav.Link as={NavLink} end to="/">Home</Nav.Link>
-						</Nav.Item>
-						<Nav.Item>
 							<Nav.Link as={NavLink} end to="/genres">Genres</Nav.Link>
 						</Nav.Item>
 					</Nav>

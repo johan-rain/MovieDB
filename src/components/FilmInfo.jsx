@@ -1,11 +1,11 @@
 import React from 'react'
 
 function FilmInfo() {
-    return (
-        <div>
-            
-        </div>
-    )
+	return (
+		<div>
+			
+		</div>
+	)
 }
 
 export default FilmInfo

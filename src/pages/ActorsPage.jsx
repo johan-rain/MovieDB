@@ -1,11 +1,11 @@
-import Container from 'react-bootstrap/Container'
+import React from 'react'
 
 function ActorsPage() {
-    return (
-        <div>
-            
-        </div>
-    )
+	return (
+		<div>
+			
+		</div>
+	)
 }
 
 export default ActorsPage

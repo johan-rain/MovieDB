@@ -5,7 +5,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
  
 const FAKE_SLOW_API = false;
-const FAKE_SLOW_API_DELAY = 1500;
+const FAKE_SLOW_API_DELAY = 2000;
  
 const requestOptions = {
     params: {
@@ -17,8 +17,6 @@ const requestOptions = {
  
  const get = async (endpoint, options) => {
      const res = await axios.get(endpoint, options);
- 
-     console.log(endpoint, options);
  
      FAKE_SLOW_API &&
          (await new Promise((r) => setTimeout(r, FAKE_SLOW_API_DELAY)));

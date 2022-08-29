@@ -1,1 +1,27 @@
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
+
+body {
+	text-decoration: none;
+	background: rgb(58,58,58);	
+	color: black;
+}
+
+a, Link {
+	text-decoration: none;
+}
+
+.navbar {
+	background-color: #2d5bfd;
+}
+
+a.nav-link, a.navbar-brand {
+	color: white !important;
+}
+
+a.nav-link {
+	font-size: 2rem;
+}
+
+a.navbar-brand {
+	font-size: 3rem;
+}
