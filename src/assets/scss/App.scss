@@ -11,7 +11,8 @@ a, Link {
 }
 
 .navbar {
-	background-color: white;
+	background: rgb(58,58,58);
+	background: linear-gradient(0deg, rgba(58,58,58,1) 0%, rgba(255,255,255,1) 7%);
 }
 
 a.nav-link, a.navbar-brand {
@@ -23,7 +24,7 @@ a.nav-link {
 }
 
 a.navbar-brand {
-	font-size: 3rem;
+	font-size: 4rem;
 }
 
 .white-container {
@@ -48,14 +49,15 @@ a.navbar-brand {
 .genre-btn {
 	font-size: 1.5rem;
 	text-decoration: none;
-	color: #fff;
+	color: #fff !important;
 	text-align: center;
 	background-color: rgb(8, 87, 8);
 	padding: 1.1rem;
-	width: 16rem;
+	width: 13rem;
 	border-radius: 5px;
 }
 
 .genre-btn:hover {
+	background-color: rgb(10, 110, 10);
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
