@@ -11,11 +11,11 @@ a, Link {
 }
 
 .navbar {
-	background-color: #2d5bfd;
+	background-color: white;
 }
 
 a.nav-link, a.navbar-brand {
-	color: white !important;
+	color: black !important;
 }
 
 a.nav-link {
@@ -24,4 +24,17 @@ a.nav-link {
 
 a.navbar-brand {
 	font-size: 3rem;
+}
+
+.white-container {
+	background-color: white;
+	margin-top: 3.5rem;
+	border-radius: 7px;
+	padding: 2.5rem;
+}
+
+.film-text {
+	font-size: 1.6rem;
+	text-decoration: none;
+	color: black;
 }
