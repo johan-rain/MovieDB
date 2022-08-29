@@ -1,11 +1,31 @@
-import React from 'react'
+import React from "react";
+import { Container } from "react-bootstrap";
 
-function ActorInfo() {
+const ActorDetails = ({ actor }) => {
+
 	return (
-		<div>
-			
-		</div>
-	)
-}
+		<>
+			<Container className="white-container">
+				
+				<div className="d-flex justify-content-between w-100 align-items-center">
+					<div>
+						<h1>{actor.name}</h1>
+					</div>
+				</div>
 
-export default ActorInfo
+				<div className="d-flex mt-2 justify-content-between align-items-start">
+
+					<img className="fluid w-25"
+						src={`https://image.tmdb.org/t/p/original/${actor.profile_path}`}>
+					</img>
+
+					<p className="w-75 ms-5">{actor.biography}</p>
+
+				</div>
+
+			</Container>
+		</>
+	);
+};
+
+export default ActorDetails;

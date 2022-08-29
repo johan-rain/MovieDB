@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
+import useActor from "../hooks/useActor";
+import ActorInfo from "../components/ActorInfo"
+import LoadingSpinner from "../components/LoadingSpinner";
 
-function ActorsPage() {
+const ActorPage = () => {
+	const { id } = useParams();
+	const { data: actor, isLoading } = useActor(id);
+
 	return (
-		<div>
-			
-		</div>
-	)
-}
+		<>
+			{isLoading && <LoadingSpinner />}
+			{actor && <ActorInfo actor={actor} />}
+		</>
+	);
+};
 
-export default ActorsPage
+export default ActorPage;
