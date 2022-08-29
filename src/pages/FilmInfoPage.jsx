@@ -1,11 +1,21 @@
-import React from 'react'
+import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import useFilm from "../hooks/useFilm";
+import FilmInfo from "../components/FilmInfo"
+import LoadingSpinner from "../components/LoadingSpinner";
 
-function FilmInfoPage() {
+const FilmInfoPage = () => {
+	const { id } = useParams();
+	const { data: movie, isLoading } = useFilm(id);
+
 	return (
-		<div>
-			
-		</div>
-	)
-}
+		<Container className="white-container">
 
-export default FilmInfoPage
+			{isLoading && <LoadingSpinner />}
+			{movie && <FilmInfo movie={movie} />}
+		
+		</Container>
+	);
+};
+
+export default FilmInfoPage;
