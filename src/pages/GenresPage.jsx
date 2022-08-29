@@ -15,11 +15,12 @@ const GenresPage = () => {
 			{genres && (
 				<div className="white-container ">
 
-					<h2 className="mb-5 d-flex justify-content-center">Genres</h2>
-
-					<div className="d-flex justify-content-center mb-2">
-						<button className="genre-btn">genre</button>
-					</div>
+					<h1 className="mb-5 d-flex justify-content-center">Genres</h1>
+						{genres.genres.map((genre) => (
+							<div className="d-flex justify-content-center mb-2">
+								<Link className="genre-btn" to={`/genres/${genre.name}`}> {genre.name}</Link>
+							</div>
+						))}
 
 				</div>
 			)}
