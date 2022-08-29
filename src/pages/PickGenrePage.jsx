@@ -1,6 +1,8 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import useFilmGenre from "../hooks/useFilmGenre"
 import FilmCard from "../components/FilmCard"
 import { useSearchParams } from "react-router-dom";
@@ -22,11 +24,13 @@ const PickGenrePage = () => {
 						<h2>{name}</h2>
 					</div>
 
-                    {movies.results.map((movie) => (
-
-                        <FilmCard movie={movie} />
-
-                    ))}
+					<Row>
+						{movies.results.map((movie) => (
+							<Col lg={4} key={movie.id}>
+								<FilmCard movie={movie} />
+							</Col>
+						))}
+					</Row>
 				</div>
 			)}
 		</Container>
