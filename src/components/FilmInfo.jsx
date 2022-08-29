@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import ActorCard from "./ActorCard";
 
 const MovieDetails = ({ movie }) => {
 
@@ -42,6 +45,20 @@ const MovieDetails = ({ movie }) => {
 				<h4 className="mt-3 mb-3">{movie.tagline}</h4>
 
 				<p>{movie.overview}</p>
+
+				<div className="pt-2">
+
+					<p>Cast (in credits order)</p>
+
+					<Row>
+						{movie.credits.cast.map((actor) => (
+							<Col lg={2} md={4} sm={6} key={actor.id} className="pb-3">
+								<ActorCard actor={actor} />
+							</Col>
+						))}
+					</Row>
+
+				</div>
 
 			</Container>
 		</>
